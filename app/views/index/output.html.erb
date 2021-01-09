@@ -1,0 +1,24 @@
+<h1>Результат</h1>
+
+<%= link_to 'Назад', index_input_path %>
+
+<p>
+    <table>
+        <% if @result.to_a.empty? %>
+        <p>Введите натуральное число</p>
+        <% else %>
+		<tr><td>Число</td><td>Квадрат</td></tr>
+
+		<% @result.each do |elem| %>
+		<% unless elem.size == 0 %>
+		<tr>
+			<td><%= elem[0]%></td>
+			<td><%= elem[1]%></td>
+		</tr>
+		<% end %>
+		<% end %>
+	</table>
+</p>
+
+<p>Всего таких чисел было найдено: <%= @result.size %></p>
+<% end %>
